@@ -66,49 +66,36 @@ THEN the password is either displayed in an alert or written to the page
 ​
 ### What I learned
 ​
-This challenged requited me to build a web application from scratch.  It was challenging to plan and organize this project from the ground up with no starting code.  First, I utilized my newly learned skill of making wire frames to design my desktop layout so that I had a visualization of how to use flexbox.  Here is the wireframe that I made:\
+This project was an on the job type of challenge.  The HTML and CSS were complete, so the main focus was writing JavaScript to generate a random password.  Through this, I learned how to interact with the user using `alert()` and `confirm()` to get necessary data input.  In addition, I used array methods to manipulate data and make my code more concise.  Finally, it was necessary to utilize `if` statements and `while` loops; they came in handy when tell my code what data to use when generating the password as well as making sure the user input valid responses.\
 \
-![Desktop Wireframe](./assets/images/Port-WF-Desk1.png)\
-\
-I learned how to make a sticky nav bar and header while still leaving space for it when using scroll links on my page.  Also, the z-index was very important to specify what layer the elements would be as it scrolled along the page.  Here are the snippets of CSS that make this feature function appropriately.
+Here is an example of my use of `prompt` to get the user's desired password length.  In order to ensure the input was valid, I called a `while` loop to check if the input was a valid length value and if it was an integer.  If it wasn't, then the user is prompted again to re-enter a proper value.
 
-​
-```css
-html {
-  scroll-padding-top: 200px; /* height of sticky header */
-}
-
-header {
-  position: sticky;
-  top: 0px;
-  z-index: 1;
-  height: 100px;
-  background-color: var(--lt);
-}
-
-nav {
-  position: sticky;
-  top: 100px;
-  display: flex;
-  justify-content: space-around;
-  align-content: center;
-  padding: 10px;
-  margin-bottom: 150px;
-  z-index: 1;
-  background-color: var(--dk);
-}
+```js
+  // Write Promts for user to specify Length
+  passLength = prompt("Enter length of password (8-128 characters)");
+  // Re-prompts user if the value entered is not in the specified range or isn't an integer
+  while (passLength < 8 || passLength > 128 || passLength % 1 > 0) {
+    passLength = prompt("Not a valid length.  Enter length of password (8-128 characters)");
+  }
 ```
+Here is an example of how I learned to use array methods to quickly create the arrays that I wanted to generate a password.  By using arrays methods, I only had to type out the alphabet once to create two separate arrays with 26 individual lowercase and uppercase character values.
+```js
+  let lower = "abcdefghijklmnopqrstuvwxyz";
+  let upper = lower.toUpperCase();
+  lower = lower.split('');
+  upper = upper.split('');
+  ```
 ​
 ​
 ### Continued development
 ​
-From my experience gained working on this project I have realized my lack of skills using CSS.  I want to continue to practice so that I have a super solid understanding of how CSS selectors work and what is the most eloquent way to apply attributes to my HTML elemnts in my CSS code.
+This challenge ispired me to find new ways to manipulate data within arrays.  In the future I want to understand how to do similar method use with objects as my skills advance.
+
 ### Useful resources
 ​
-- [Markdown Guide](https://www.markdownguide.org/basic-syntax/) - I continue to use this source as a referernce when writing my README.md to understand markdown syntax.
-- [Difference between sticky and fixed position](https://stackoverflow.com/questions/19501919/difference-between-positionsticky-and-positionfixed) - This stackoverflow question helped me immensely in understanding the difference between sticky and fixed position so that I could effectively implement my sticky navbar and header.
-- [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) - This flexbox guide was a helpful quick reference when I had trouble with positioning my elements.
-- [Transitions on hover](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions) - I used this page as a reference to have hover transitions in my CSS.
+- [Array Methods W3 Schools](https://www.w3schools.com/js/js_array_methods.asp) - This is a great reference to different common array methods and how they are used to modify and manipulate arrays.
+
+
 ​
 ## Author
 ​
@@ -118,6 +105,4 @@ From my experience gained working on this project I have realized my lack of ski
 ​
 ## Acknowledgments
 ​
-My teacher, Emmanuel Jacuban, helped me with understanding scroll-padding-top in CSS to keep my sticky navbar and heading from covering my page scroll links.
-
-My tutor, Jacob Norman, helped me understand how CSS selectors could specifically reference elements through heiarchy and not just individual class and id.  He also should be cool dynamic effects CSS can achieve using pseudo classes like hover.
+My tutor, Jacab Nordan, had a great conversation with my about the backslash character.  I ultimately decided to keep it out of my special characters because it is unique and carries a special function.  It is the escape character.  When used on itself, it was entering two backslashes into my array.  I will look into this more in the future.

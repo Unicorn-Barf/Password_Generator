@@ -18,11 +18,23 @@ function writePassword() {
   }
   // Make passLength into float
   passLength = parseFloat(passLength);
-  // Confirms for user to specify addition of lowercase, uppercase, numeric, and/or special characters
-  passLower = confirm("Include lowercase characters?");
-  passUpper = confirm("Include uppercase characters?");
-  passNumeric = confirm("Include numeric characters?");
-  passSpecial = confirm("Include special characters?");
+  // Set criteria to false
+  passLower = false;
+  passUpper = false;
+  passNumeric = false;
+  passSpecial = false;
+  // Use confirms for password criteria, re-prompt in while loop if no criteria is selected
+  while (passLower === false && passUpper === false && passNumeric === false && passSpecial === false) {
+    // Confirms for user to specify addition of lowercase, uppercase, numeric, and/or special characters
+    passLower = confirm("Include lowercase characters?");
+    passUpper = confirm("Include uppercase characters?");
+    passNumeric = confirm("Include numeric characters?");
+    passSpecial = confirm("Include special characters?");
+    // If all types are false, alert user
+    if (passLower === false && passUpper === false && passNumeric === false && passSpecial === false) {
+    alert("Please select at least one character type!");
+    }
+  }
 
   // Calls function to generate random password
   var password = generatePassword();
@@ -38,23 +50,10 @@ function generatePassword() {
   let upper = lower.toUpperCase();
   lower = lower.split('');
   upper = upper.split('');
-  // ask ta about the \ character
-  let special = "!" + '"' + "#$%&'()*+,-./:;<=>?@[" + "\\" + "[]^_`{|}~";
+  let special = "!" + '"' + "#$%&'()*+,-./:;<=>?@[" + "]^_`{|}~";
   special = special.split('');
   let numeric = "0123456789";
   numeric = numeric.split('');
-
-  // console check variables
-  //   console.log(upper);
-  //   console.log(lower);
-  //   console.log(special);
-    console.log(passLength);
-  //   console.log(isNaN(passLength));
-  //   console.log(passLower);
-  //   console.log(passUpper);
-  //   console.log(passSpecial);
-  //   console.log(passNumeric);
-  // }
 
   // code to generate character array depending on user criteria
   let myArray = [];
@@ -71,7 +70,7 @@ function generatePassword() {
     myArray = myArray.concat(special);
   }
 
-  console.log(myArray);
+  // create local variable to store password
   let myPass = [];
   // for loop to generate password
   for (i=0; i<passLength; i++) {
@@ -82,7 +81,6 @@ function generatePassword() {
   }
   // Change myPass from array to string
   myPass = myPass.join('');
-  console.log(myPass);
   return(myPass);
 }
 
