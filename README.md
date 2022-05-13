@@ -49,12 +49,12 @@ THEN the password is either displayed in an alert or written to the page
 ​
 ### Screenshot
 ​
-![My Website](./assets/images/screenshot.png)
+![My Website](./assets/images/pass_screenshot.png)
 ​
 ### Links
 ​
-- Solution URL: [https://github.com/Unicorn-Barf/homework_2](https://github.com/Unicorn-Barf/homework_2)
-- Live Site URL: [https://unicorn-barf.github.io/homework_2/](https://unicorn-barf.github.io/homework_2/)
+- Solution URL: [https://github.com/Unicorn-Barf/challenge_3](https://github.com/Unicorn-Barf/challenge_3)
+- Live Site URL: [https://unicorn-barf.github.io/challenge_3/](https://unicorn-barf.github.io/challenge_3/)
 ​
 ## My process
 ​
@@ -94,7 +94,7 @@ This challenge ispired me to find new ways to manipulate data within arrays.  In
 ### Useful resources
 ​
 - [Array Methods W3 Schools](https://www.w3schools.com/js/js_array_methods.asp) - This is a great reference to different common array methods and how they are used to modify and manipulate arrays.
-
+- [Backslash Character](https://www.afterhoursprogramming.com/tutorial/javascript/backslash-characters/) - This was a helpful resource to understand the backslash character and its escape characteristics.
 
 ​
 ## Author

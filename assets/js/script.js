@@ -76,6 +76,7 @@ function generatePassword() {
   for (i=0; i<passLength; i++) {
     // Random float between 0 and 1
     let rand = Math.random();
+    // Select random array index
     myIndex = Math.round(rand * myArray.length);
     myPass[i] = myArray[myIndex];
   }
